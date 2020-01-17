@@ -1,0 +1,12 @@
+body {
+  background-color: #00171f;
+}
+h1, h2, p, b, ul li {
+  color: #f2eadf;
+}
+a {
+  color: #00a8e8;
+}
+a:hover {
+  color: #007ea7;
+}
