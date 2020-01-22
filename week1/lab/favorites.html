@@ -4,22 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <title>My favorite things</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <title>My Favorite Things</title>
 </head>
 <body>
-  <h1>Some of my favorite things</h1>
-  <h2>My Favorite Movie</h2>
-  <p><a href="https://en.wikipedia.org/wiki/Coming_to_America"><i>Coming To America</i></a> is my favorite movie. Starring Eddie Murphy, <i>Coming To America</i> is a story about an African king searching for a queen in the home of queens - Queens, New York.</p>
-  <h2>My Favorite Music</h2>
-  <p>One of my favorite misicians is <b>Isaac Hayes</b>. See more on <a href="https://en.wikipedia.org/wiki/Isaac_Hayes">wikipedia</a>.</p>
-  <h2>Favorite Food</h2>
-  <ul id="foods">
-    <li class="healthy">Peanuts</li>
-    <li class="healthy">Apples</li>
-    <li class="unhealthy">Mac and Cheese</li>
-    <li class="unhealthy">Croissants</li>
-    <li class="unhealthy">Candy</li>
-  </ul>
+  <h1 id="page-title">Some of my favorite things</h1>
+  <h1>by yp0975eu</h1>
+  <div class="favorite-section">
+    <h2 class="section-header">My Favorite Movie</h2>
+    <p><a href="https://en.wikipedia.org/wiki/Coming_to_America"><span id="favorite-movie-title">Coming To America</span></a> is my favorite movie. Starring Eddie Murphy, <i>Coming To America</i> is a story about an African king searching for a queen in the home of queens - Queens, New York.</p>
+  </div>
+  <div class="favorite-section">
+    <h2 class="section-header">My Favorite Band/Artist</h2>
+    <p>One of my favorite misicians is <span id="favorite-music-artist-name">Isaac Hayes</span>. See more on <a href="https://en.wikipedia.org/wiki/Isaac_Hayes">wikipedia</a>.</p>
+  </div>
+  <div class="favorite-section">
+    <h2 class="section-header">My Favorite Food</h2>
+    <ul id="foods">
+      <li class="healthy">Peanuts</li>
+      <li id="most-favorite-food" class="healthy">Apples</li>
+      <li class="unhealthy">Mac and Cheese</li>
+      <li class="unhealthy">Croissants</li>
+      <li class="unhealthy">Candy</li>
+    </ul>
+  </div>
+  <div class="favorite-section">
+    <h2>Some Favorite Images</h2>
+    <img src="saintpaul.jpg" class="favorite-image" alt="Saint Paul" />
+    <img src="minneapolis.jpg" class="favorite-image" alt="Minneapolis" />
+    <p>Images from <a href="https://www.wikipedia.org/" alt="wikipedia">wikipedia</a></p>
+  </div>
+  <div class="favorite-section">
+    <h2>My Favorite Books</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>You Should Read More</td>
+          <td>Bob</td>
+          <td><a href="https://www.wikipedia.org/" alt="wikipedia">wikipedia</a></td>
+        </tr>
+        <tr>
+          <td>You Should Read More, Vol 2</td>
+          <td>Dobalina</td>
+          <td><a href="https://www.wikipedia.org/" alt="wikipedia">wikipedia</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
