@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Input Elements</title>
-  <link rel='stylesheet' type='text/css' media='screen' href='inputs.css'>
+  <title>Student Feedback</title>
+
+  <meta charset="utf-8">​
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='feedback.css'>
+
 </head>
+
 <body>
-
-<form>
-  <p>
-    <label for="name">Enter your name</label>
-    <input id="name" tpye="text" name="name">
-  </p>
-  <p>
-    <label for="email">Enter your email</label>
-    <input id="email" tpye="email" name="email">
-  </p>
-  <p>
-    <p><label for="comments">Comments</label></p>
-    <textarea id="comments" name="comments" cols="40" rows="10" required></textarea>
-  </p>
-    <p>Are you a current student:</p>
-    <input type="radio" id="enrolled_yes" name="enrolled" value="yes" checked>
-    <label for="enrolled_yes">Yes</label>
-    
-    <input type="radio" id="enrolled_no" name="enrolled" value="no">
-    <label for="enrolled_no">No</label>
-  </p>
-  <input type="submit" id="submit" value="Submit">
-</form>
-
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Please provide feedback. You may do so anonymously.</h1>
+    </div>
+    <div class="row">
+    <div class="col-md-3">
+      <p>As one of our students, your thoughts, comments, and feedback is important to us.</p>
+      <p>Please use this form to send us your feeback.</p>
+      <p>If you would like a response please include your contact informatoin.</p>
+    </div>
+    <div class="col-md-9">
+      <form>
+        <div class="form-group">
+          <label for="name">Enter your name</label>
+          <input id="name" class="form-control" tpye="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Enter your email</label>
+          <input id="email" class="form-control" tpye="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="comments">Comments</label>
+          <textarea id="comments" class="form-control" name="comments" cols="40" rows="10" required></textarea>
+        </div>
+        <div class="form-group">
+          <p>Are you a current student:</p>
+          <div class="radio">
+            <input type="radio" id="enrolled_yes" name="enrolled" value="yes" checked>
+            <label for="enrolled_yes">Yes</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="enrolled_no" name="enrolled" value="no">
+            <label for="enrolled_no">No</label>
+          </div>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary mt-2">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>
 </body>
-</html>
 
+</html>
