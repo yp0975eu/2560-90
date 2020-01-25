@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Elements</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='inputs.css'>
+</head>
+<body>
+
+<form>
+  <p>
+    <label for="name">Enter your name</label>
+    <input id="name" tpye="text" name="name">
+  </p>
+  <p>
+    <label for="email">Enter your email</label>
+    <input id="email" tpye="email" name="email">
+  </p>
+  <p>
+    <p><label for="comments">Comments</label></p>
+    <textarea id="comments" name="comments" cols="40" rows="10" required></textarea>
+  </p>
+    <p>Are you a current student:</p>
+    <input type="radio" id="enrolled_yes" name="enrolled" value="yes" checked>
+    <label for="enrolled_yes">Yes</label>
+    
+    <input type="radio" id="enrolled_no" name="enrolled" value="no">
+    <label for="enrolled_no">No</label>
+  </p>
+  <input type="submit" id="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
