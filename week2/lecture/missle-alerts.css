@@ -1,0 +1,31 @@
+a {
+  display: block;
+  width: 100px;
+  border: 1px solid;
+  text-align: center;
+  margin: 20px;
+  border-radius: 50%;
+  padding-top: 30px;
+  height: 60px;
+  box-shadow: 1px 1px 8px black;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color:darkgray;
+  text-shadow: none;
+  box-shadow: 0px 0px 4px black;
+  border-color:#a4a4a4;  
+}
+
+#real-alert {
+  background: linear-gradient(45deg, red, darkred, red);
+}
+
+#test-only {
+  background: linear-gradient(45deg, green, rgb(0, 87, 0), green);
+  text-shadow: 1px 1px 1px green;
+  padding-top: 30px;
+  height: 70px;
+}
