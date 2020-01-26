@@ -1,0 +1,19 @@
+body {
+  font-family: serif;
+  background-color: #d9fceb;
+}
+.jumbotron {
+  font-family: sans-serif;
+  background-color: rgb(250, 236, 194);
+  text-align: center;
+}
+#screen-shot {
+  width:100%;
+}
+#code-snippet {
+  background: white;
+  height: 500px;
+  overflow-y: scroll;
+  border: 1px solid black;
+
+}
