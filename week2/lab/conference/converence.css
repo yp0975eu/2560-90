@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient(0deg,rgb(7, 2, 41), rgb(19, 4, 185));
+  color: white;
+  padding-bottom: 40px;
+}
+
+.outlined {
+  font-size: 100px;
+  font-family: 'Londrina Outline', cursive;
+}

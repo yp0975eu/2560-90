@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" media="screen" href="converence.css">
   <title>Conference Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="converence.css">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  
+  <div class="container">
+    <h1 class="outlined">conference registration</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type='text' maxlength="70" id="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type='password' id="password" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type='email' id="email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="tshirt-size" id="tshirt-size">T-shirt Size:</label>
+        <select id="tshirt-size" class="form-control" required>
+          <option value="small">Small</option>
+          <option value="medium">Meduim</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="birthday">Birthday</label>
+        <input id="birthday" type='date' class="form-control" required>
+      </div>
+      <div>
+        <p>Receive Emails</p>
+        <div class="radio">
+          <label for="yes-emails">
+            <input type="radio" id="yes-emails" name="email-preference" value="yes"> Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label for="no-emails">
+            <input type="radio" id="no-emails" name="email-preference" value="no"> No
+          </label>
+        </div>
+      </div>
+      <div>
+        <p>Select Sessions</p>
+        <div class="checkbox">
+          <label for="am-session">
+            <input type="checkbox" id="am-session" name="sessions" value="am"> Am
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="pm-session">
+            <input type="checkbox" id="pm-session" name="sessions" value="pm"> Pm
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="special-interests">Special Requests</label>
+        <textarea name="special-interests" id="special-interests" class="form-control" cols="70" rows="7"></textarea>
+      </div>
+      <button type='submit' id="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </body>
+
 </html>
