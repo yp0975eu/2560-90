@@ -101,7 +101,10 @@
     let removeStudents = document.getElementById('remove-selected-students')
     removeStudents.addEventListener('click', function() {
         let studentList = document.getElementById('student-list')
-        studentList.innerHTML = ''
+        let selected = document.querySelectorAll('.selected')
+        selected.forEach(function(element){
+          studentList.removeChild(element)
+        })
         setStudentCount()
 
     })
