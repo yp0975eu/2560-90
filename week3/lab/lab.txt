@@ -1,0 +1,59 @@
+
+
+Question 1, Create List, 5 points
+
+Part 1a: (You did this in class) Create a web page with an empty unordered list, a input text box, and button. When the user types text into the input form and clicks the button, the text should be added to the list, as a new list element. When the text has been added to the unordered list, clear the text from the input. 
+
+Part 1b: Add a clear button. When clicked, all the li elements should be removed from the page so the ul list is empty.
+
+Part 1c: Prevent the user adding more than 10 items to the list. If the clear button is clicked, the user may keep adding items. 
+
+Part 1d:  Add validation using JavaScript. The form should only accept text of length between 1 and 50 characters.
+
+    Ignore the user input it if there is no text entered
+    Display an alert error message if it the text too long - more than 50 characters. Do not clear the text in the input.
+
+Question 2, Student Club Roster creator, 15 points
+
+Write the JavaScript for a page to generate a list of student members for a student club.
+
+[HTML element notation: span#student-count means the span element with id="student-count" ]
+
+Each student needs to have their name, id and GPA recorded. 
+
+Start with this page: https://github.com/claraj/week3-examples/blob/master/lab/student_club_roster.html
+When the page loads:
+
+    Using JavaScript, display 0 in the span#student-count  (1pt)
+
+When button#add-students is clicked:
+
+    Read the value from the student-name input, save in a variable. If the name is not entered, show an alert error message and return. (1pt)
+    Read the value from the student-id input, save in a variable. If the id is not entered, show an alert error message and return. (1pt)
+    Read the value from the student-gpa input, save in a variable. If the GPA is not entered, or is not in the range 0-4, show an alert error message and return.  (2pt)
+    Create a new li element (1pt)
+    Set the innerHTML of the li element to a string containing the student's name, id, and GPA  (1pt)
+        for example "Beyonce Knowles, id: aa1234bb, GPA 3.8"
+        Use a template string to generate this string
+    Add a click event handler to the new li element.  (3pt)
+        When that li element is clicked, add the class="selected" to that li element.
+        When that li element is clicked again, remove the class="selected" from that li element
+        In other words, clicking a li element will toggle the selected class.
+    Add the new li element to ul#student-list element (1pt)
+    Update the span#student-count value to the new number of students (1pt)
+
+When button#remove-selected-students is clicked:
+
+    remove all of the elements with the class="selected" from the list.   (3pt)
+
+You should not need to modify any of the HTML. 
+
+Here's an example page with the required functionality: https://claraj.github.io/week3-examples/lab/student_club_roster_example.html
+
+To submit:
+
+Make sure all of your files have descriptive names
+
+Preferred: push all of your files to a Git repository and upload the URL to D2L
+
+Also OK: zip file of all of your files 

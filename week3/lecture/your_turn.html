@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Your turn</title>
+</head>
+<body>
+  <p>Add something to the list</p>
+  <input type="text" id="inputbox">
+  <button id="add">Add</button>
+  <button id="clear">Clear</button>
+  <ul id="list">
+  </ul>
+  <script>
+    // get html elements
+    let input = document.querySelector('#inputbox')
+    let add = document.querySelector('#add')
+    let list = document.querySelector('#list')
+    let clear = document.querySelector('#clear')
+    
+    //add a listener
+    add.addEventListener('click', function() {
+      if(list.childElementCount >= 10) {
+        // clear input if there are too many items
+        input.value = ''
+        return 
+      }
+      // create list element and add to list
+      let item = document.createElement('li')
+      item.innerText = input.value
+      list.appendChild(item)
+      // clear input
+      input.value = ''
+    })
+    clear.addEventListener('click', function() {
+      // clear all list nodes
+      list.innerText = ''
+    })
+  </script>
+</body>
+</html>
