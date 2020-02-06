@@ -1,0 +1,25 @@
+Part 1: Tree Order Form Validation (8 points)
+
+Start with this page
+
+https://github.com/claraj/week4-examples/blob/master/form_errors/tree_order_form_lab_template.html
+
+This is the same form as the one in the slides, plus two extra inputs to validate.
+
+Finish the form validation JavaScript. When the submit button is pressed, JavaScript will validate the form. Make sure an error message is displayed, with one line for each problem with the form.  Try different invalid inputs, for example, enter a string in the zip code field - and make sure an appropriate error message is displayed.
+
+If the form is completed correctly, then display a confirmation message in p id="order-summary" the with all of the information entered. Use a template string. 
+
+Part 2: Arrays and Objects Practice (12 points)
+
+Start with this program. Make a copy on your computer, and run it using Node. 
+
+https://github.com/claraj/week4-examples/blob/master/js_practice/arrays_and_objects.js
+
+There are some example JavaScript objects that you will need to work with. 
+
+Read the instructions, and complete the code indicated with the lines starting with // TODO.
+
+To submit: A link to your Git repository with the files for part 1 and part 2. 
+
+Also OK (but please ask about getting Git working!! You won't be able to do the second half of the class without git) A zip file.
