@@ -22,6 +22,14 @@
     
     //add a listener
     add.addEventListener('click', function() {
+      if (input.value.length === 0) {
+        return
+      }
+      if (input.value.length >= 50) {
+        alert('you can not input more than 50 characters')
+        return
+      }
+      
       if(list.childElementCount >= 10) {
         // clear input if there are too many items
         input.value = ''
@@ -34,6 +42,7 @@
       // clear input
       input.value = ''
     })
+
     clear.addEventListener('click', function() {
       // clear all list nodes
       list.innerText = ''
