@@ -73,7 +73,15 @@
         let studentId = document.getElementById('student-id').value
         //    - Read the value from the student-gpa input
         let studentGpa = document.getElementById('student-gpa').value
-
+     
+        if (studentName.value.length === 0 || studentId.value.length === 0) {
+          alert('student name and student id cannot be empty')
+          return 
+        }
+        if (studentGpa.value.length < 0 || studentGpa.value.length > 4) {
+          alert('student gpa must be 0-4')
+          return 
+        }
         //    - Create a new li element
         let li = document.createElement('li')
         //    - Set the new li element innerHTML to a string containing the student's name, id, and GPA
