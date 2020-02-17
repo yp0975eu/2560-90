@@ -18,14 +18,42 @@ let bridges = [
   { name: 'Tacoma Narrows Bridge', city: 'Tacoma and Kitsap', state: 'WA', span: '853.44', location: [47.2690, -122.5517] }
 ]
 
-
 var bridgeIcon = L.icon({
   iconUrl: 'bridge.png',
-  iconSize:     [32, 32], // size of the icon
+  iconSize: [32, 32], // size of the icon
 });
 
 bridges.forEach(function (bridge) {
   L.marker(bridge.location, {icon: bridgeIcon})
     .bindPopup(`${bridge.name}<br>${bridge.span} meters`)
     .addTo(map)
+})
+
+
+const canvas = document.getElementById('longest-bridges-chart')
+const ctx = canvas.getContext('2d')
+
+const chart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: bridges.map(function(bridge){
+      return bridge.name
+    }),
+    datasets:[{
+      label: 'Longest Bridges ',
+      data: bridges.map(function(bridge){
+        return bridge.span
+      }),
+      backgroundColor: ['red', 'blue', 'yellow', 'green', 'orange']
+    }] 
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
 })
