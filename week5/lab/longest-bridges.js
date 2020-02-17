@@ -1,6 +1,7 @@
 let mapCenter = [44.96, -93.2]
 let zoomLevel = 3
 let map = L.map('longest-bridges').setView(mapCenter, zoomLevel)
+
 L.tileLayer(
   'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
@@ -24,28 +25,28 @@ var bridgeIcon = L.icon({
 });
 
 bridges.forEach(function (bridge) {
-  L.marker(bridge.location, {icon: bridgeIcon})
+  L.marker(bridge.location, { icon: bridgeIcon })
     .bindPopup(`${bridge.name}<br>${bridge.span} meters`)
     .addTo(map)
 })
 
-
+// chart for longest bridges
 const canvas = document.getElementById('longest-bridges-chart')
 const ctx = canvas.getContext('2d')
 
 const chart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: bridges.map(function(bridge){
+    labels: bridges.map(function (bridge) { // return array of bridge names
       return bridge.name
     }),
-    datasets:[{
+    datasets: [{
       label: 'Longest Bridges ',
-      data: bridges.map(function(bridge){
+      data: bridges.map(function (bridge) { // return array of bridge spans
         return bridge.span
       }),
       backgroundColor: ['red', 'blue', 'yellow', 'green', 'orange']
-    }] 
+    }]
   },
   options: {
     scales: {
