@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flickity</title>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+</head>
+<body>
+  <div class="main-carousel">
+    <!--  Credit: NOAA Weather in Focus Photo Contest 2015  -->
+    <div class="carousel-cell"><img src="img01.jpg" alt="Tornado Nightmares - A satellite tornado circulates around a newly formedtornado as we crest a hill. Taken minutes after the twin wedge tornadoevent that hit Pilger, NE approximately 8 miles West of Pender, NE."></div>
+    <div class="carousel-cell"><img src="img02.jpg" alt="A massive cold front with squall line over northern Adriatic sea, Italy." ></div>
+    <div class="carousel-cell"><img src="img03.jpg" alt="Skies ablaze on the high plains."></div>
+    <div class="carousel-cell"><img src="img04.jpg" alt="Sunset after the storm"></div>
+    <div class="carousel-cell"><img src="img05.jpg" alt="A storm rolling in with dark and ominous clouds. " ></div>
+  </div>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script>
+    var flickity = new Flickity( '.main-carousel', {
+      wrapAround: true,
+      autoPlay: true,
+      contain: true
+    })
+  </script>
+</body>
+</html>
