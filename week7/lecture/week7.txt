@@ -1,0 +1,4 @@
+https://github.com/yp0975eu/2560-90/tree/master/week7/lecture
+
+Q2 answer: 
+Total is not defined in any of the data object properties or computed values.
