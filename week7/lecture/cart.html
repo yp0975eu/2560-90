@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Vue</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <style>
+    th,
+    tr {
+      border: 1px solid green;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <div>
+      <h2>Shopping Cart</h2>
+      <div id="shopping-cart">
+        <table>
+          <tr>
+            <th>item</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total</th>
+          </tr>
+          <tr>
+            <td>{{ name }}</td>
+            <td>{{ price }}</td>
+            <td><input type="number" v-model="qt"></td>
+            <td>${{ total | decimalPlaces(2)}}</td>
+          </tr>
+        </table>
+      </div>
+  </div>
+  <script>
+    new Vue({
+      el: "#shopping-cart",
+      data: {
+        qt: 0,
+        name: 'Hat',
+        price: 4.99,
+      },
+      computed: {
+        total: function () {
+          return this.price * this.qt
+        }
+      },
+      filters: {
+        decimalPlaces:  function (price, decimalPlaces) {
+          return price.toFixed(decimalPlaces)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

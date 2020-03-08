@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello Vue</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-
+  <style>
+    th,
+    tr {
+      border: 1px solid green;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
   <div id="app">
-    <p>Hello {{message}}!</p>
+    <p>hello {{ message | uppercase }}</p>
+    <button v-on:click="exclaim">exclaim !</button>
+    <button v-on:click="clear">clear</button>
+    <div>
+      <p>Enter your name: <input v-model="name" type='text'></p>
+      <p v-if="name">Your name is {{name}}</p>
+    </div>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        message: 'World'
+        message: 'world',
+        name: '',
+        exclaimLimit: 10,
+        exclaimCount: 0
+      },
+      methods: {
+        exclaim: function () {
+          const exclimationPoint = '!'
+          if (this.exclaimCount < this.exclaimLimit) {
+            this.message = this.message + exclimationPoint
+            this.exclaimCount++
+          }
+        },
+        clear: function () {
+          this.exclaimCount = 0
+          this.message = 'world'
+        }
+      },
+      filters: {
+        uppercase: function (string) {
+          return string.toUpperCase()
+        }
       }
     })
   </script>
 </body>
+
 </html>
