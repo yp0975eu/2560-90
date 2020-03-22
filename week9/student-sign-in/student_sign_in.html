@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Sign In</title>
+  <script src="https://unpkg.com/vue@2.6.7/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="student.css" type="text/css">
+</head>
+
+<body>
+  <div id="app">
+
+    <add-new-student-component v-on:add-student="addStudent"></add-new-student-component>
+
+    <students-list v-bind:students="students" v-on:checked="checked"></students-list>
+
+    <welcome-goodbye-message
+      v-bind:see-message="seeMessage"
+      v-bind:message="message"
+      v-bind:most-recent-sign-in="mostRecentSignIn"
+      ></welcome-goodbye-message>
+  </div>
+
+  <script>
+    let WelcomeGoodByeMessage = {
+      template: `
+        <transition name="fade">
+          <div class="alert alert-success" v-if="seeMessage">{{message}} {{mostRecentSignIn}}</div>
+        </transition>
+      `,
+      props: {
+        seeMessage: Boolean,
+        message: String,
+        mostRecentSignIn: String
+      }
+    }
+    let StudentsList = {
+      template: `
+        <div class="card student-list m-2 p-2">
+        <h4 class="card-title">Students</h4>
+        <div id="student-table">
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <th>StarID</th>
+              <th>Present?</th>
+            </tr>
+            <tr v-for="student in students" v-bind:class="'present-'+student.present">
+              <td>{{student.name}}</td>
+              <td>{{student.starID}}</td>
+              <td><input type="checkbox" v-model="student.present" v-on:change="$emit('checked', student)"></td>
+            </tr>
+          </table>
+        </div>
+      </div>`,
+      data: function () {
+        return {}
+      },
+      props: {
+        students: Array,
+      }
+    }
+    let AddNewStudentComponent = {
+      template: `
+      <div>
+        <div class="alert alert-danger" v-show="errors.length > 0">
+          <li v-for="error in errors">{{error}}</li>
+        </div>
+        <div class="card add-student m-2 p-2">
+        <h4 class="card-title">Add new student</h4>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" class="form-control" v-model="newStudentName" v-model.trim="newStudentName">
+        </div>
+        <div class="form-group">
+          <label for="starID">Star ID</label>
+          <input id="starID" class="form-control" v-model="newStarID" v-model.trim="newStarID">
+        </div>
+        <button class="btn btn-primary" v-on:click.prevent="addStudent">Add</button>
+      </div>
+    </div>`,
+      data: function () {
+        return {
+          errors: [],
+          newStudentName: '',
+          newStarID: ''
+        }
+      },
+      methods: {
+        addStudent: function () {
+          this.errors = []
+
+          if (!this.newStudentName) { this.errors.push('Name is required') }
+          if (!this.newStarID) { this.errors.push('startId is required') }
+
+          if (this.errors.length === 0) {
+            let student = {
+              name: this.newStudentName,
+              starID: this.newStarID,
+              present: false
+            }
+            this.$emit('add-student', student)
+            this.newStudentName = ''
+            this.newStarID = ''
+          }
+        },
+      }
+    }
+    new Vue({
+      el: "#app",
+      data: {
+        mostRecentSignIn: '',
+        message: '',
+        seeMessage: false,
+        students: [
+          {
+            name: "Student A",
+            starID: "aa1234aa",
+            present: false
+          }
+        ],
+        errors: [],
+        newStudentName: '',
+        newStarID: ''
+
+      },
+      methods: {
+        addStudent: function (student) {
+          this.students.push(student)
+          this.students.sort(function (s1, s2) {
+            let name1 = s1.name.toLowerCase()
+            let name2 = s2.name.toLowerCase()
+            if (name1 < name2) {
+              return -1
+            }
+            if (name1 > name2) {
+              return 1
+            }
+            return 0
+          })
+        },
+        checked: function (student) {
+          this.message = student.present ? 'Hello' : 'Goodbye'
+          this.mostRecentSignIn = student.name
+          this.showMessage()
+        },
+        showMessage: function () {
+          this.seeMessage = true
+          setTimeout(() => {
+            this.seeMessage = false
+          }, 3000)
+        }
+      },
+      components: {
+        'add-new-student-component': AddNewStudentComponent,
+        'students-list': StudentsList,
+        'welcome-goodbye-message': WelcomeGoodByeMessage
+      }
+    })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Would You Rather</title>
+  <script src="https://unpkg.com/vue@2.6.7/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Would you rather...</h1>
+    <would-you-rather-question-component 
+      v-bind:question="question"
+      v-bind:answer1="answer1"
+      v-bind:answer2="answer2"
+      v-on:answer-changed="answerChanged">
+    </would-you-rather-question-component>
+    <p v:if="userSelectionMessage">{{ userSelectionMessage }}</p>
+  </div>
+  <script>
+    let WouldYouRatherQuestionComponent = {
+      template: `
+      <div>
+        <h2>{{ question }}</h2>
+        <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="$emit('answer-changed', choice)">
+        <label>{{ answer1 }}</label>
+        <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="$emit('answer-changed', choice)">
+        <label>{{ answer2 }}</label>
+      </div>
+    `,
+      data: function () {
+        return {
+          choice: ''
+        }
+      },
+      props: {
+        question: String,
+        answer1: String,
+        answer2: String
+      }
+    }
+    let app = new Vue({
+      el: '#app',
+      data: function () {
+        return {
+          question: '...live in a house shaped like a cicle or a triangle?',
+          answer1: 'Circle',
+          answer2: 'Triangle',
+          userSelectionMessage: ''
+        }
+      },
+      methods: {
+        answerChanged: function(answer) {
+          this.userSelectionMessage = `You selected ${answer}.`
+        }
+      },
+      components: {
+        'would-you-rather-question-component': WouldYouRatherQuestionComponent
+      }
+    })
+  </script>
+</body>
+
+</html>
