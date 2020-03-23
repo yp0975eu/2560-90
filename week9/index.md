@@ -1,7 +1,6 @@
 # 2560-90
-Week 9 Lab: Vue Components
+## Week9
 
-[https://yp0975eu.github.io/2560-90/week9/student-sign-in/build/] (Student Sign in)
+Would you rather [https://yp0975eu.github.io/2560-90/week9/would-you-rather/build/](https://yp0975eu.github.io/2560-90/week9/would-you-rather/build/)
 
-
-[https://yp0975eu.github.io/2560-90/week9/would-you-rather/build/] Would you rather
+student-sign-in [https://yp0975eu.github.io/2560-90/week9/student-sign-in/build/](https://yp0975eu.github.io/2560-90/week9/student-sign-in/build/)
